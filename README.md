@@ -1,7 +1,57 @@
 # imageviewer
 图片浏览库，基本完全参考(说拷贝更合适)https://github.com/stfalcon-studio/FrescoImageViewer ,只是因为这个库使用了fresco，才稍微改造了下。解除了对图片库的依赖
 
+## 使用到的库
 
+PhotoView: https://github.com/chrisbanes/PhotoView
+
+FrescoImageViewer: https://github.com/stfalcon-studio/FrescoImageViewer
+
+## 使用方法
+
+工程根目录下 `build.gradle` 
+
+```gradle
+allprojects {
+	repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
+需要使用此库的moudle下 `build.gradle`
+```gradle
+dependencies {
+    compile 'com.github.achenglike:imageviewer:1.0'
+}
+```
+
+吊起预览
+```
+new ImageViewer.Builder(MainActivity.this, urls)
+	.setImageLoader(new ImageLoader() {
+	    @Override
+	    public void display(PhotoView photoView, String location) {
+	        Glide.with(getApplicationContext()).load(location).into(photoView);
+	    }
+
+	    @Override
+	    public void display(PhotoView photoView, @DrawableRes int resId) {
+	        Glide.with(getApplicationContext()).load(resId).into(photoView);
+	    }
+	})
+	.setStartPosition(position)
+	.setImageChangeListener(new ImageViewer.OnImageChangeListener() {
+	    @Override
+	    public void onImageChange(int position) {
+	        overlayView.setPages(position, urls.size());
+	    }
+	})
+	.show();
+```
+
+更详细的用法可以参考：
+https://github.com/stfalcon-studio/FrescoImageViewer 
 
 ## License
 
