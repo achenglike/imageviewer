@@ -35,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
         urls.add("http://wx3.sinaimg.cn/wap720/90eb2137ly1fhnuvf1kryj21c00u041s.jpg");
     }
 
+    static List<Integer> drawbles;
+
+    static {
+        drawbles = new ArrayList<>();
+        drawbles.add(R.mipmap.ic_launcher);
+        drawbles.add(R.mipmap.ic_launcher);
+        drawbles.add(R.mipmap.ic_launcher);
+        drawbles.add(R.mipmap.ic_launcher);
+    }
+
     RecyclerView recyclerView;
 
     @Override

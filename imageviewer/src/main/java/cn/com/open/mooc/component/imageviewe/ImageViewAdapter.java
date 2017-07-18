@@ -92,8 +92,13 @@ public class ImageViewAdapter extends RecyclingPagerAdapter<ImageViewAdapter.Ima
 
         void bind(int position) {
             this.position = position;
-            if (imageLoader != null)
-                imageLoader.display(photoView, dataSet.format(position));
+            if (imageLoader != null) {
+                if (dataSet.drawableResource(position)) {
+                    imageLoader.display(photoView, (Integer) dataSet.getOriginData(position));
+                } else {
+                    imageLoader.display(photoView, dataSet.format(position));
+                }
+            }
             photoView.setOnScaleChangeListener(this);
         }
 

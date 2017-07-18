@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DimenRes;
+import android.support.annotation.IntegerRes;
 import android.support.annotation.StyleRes;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -152,6 +153,19 @@ public class ImageViewer implements OnDismissListener, DialogInterface.OnKeyList
 
         DataSet(List<T> data) {
             this.data = data;
+        }
+
+        /**
+         * 不严谨的判断是否是drawble资源
+         * @param position
+         * @return
+         */
+        boolean drawableResource(int position) {
+            return formatter == null && data.get(position) instanceof Integer;
+        }
+
+        T getOriginData(int position) {
+            return data.get(position);
         }
 
         String format(int position) {
