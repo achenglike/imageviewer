@@ -5,6 +5,7 @@
 
     <TextView
         android:id="@+id/tv_page"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -14,6 +15,7 @@
 
     <Button
         android:id="@+id/bt_save"
+        android:visibility="gone"
         android:text="@string/button_save"
         android:background="@null"
         android:layout_width="wrap_content"

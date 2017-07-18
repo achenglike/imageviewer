@@ -55,12 +55,17 @@ public class DefaultOverlayView extends RelativeLayout {
     }
 
     public void setPages(int current, int pageAll) {
-        currentPage = current;
-        String str = String.format(Locale.US, "%d/%d", current+1, pageAll);
-        tvPage.setText(str);
+        if (pageAll > 1) {
+            tvPage.setVisibility(VISIBLE);
+            currentPage = current;
+            String str = String.format(Locale.US, "%d/%d", current+1, pageAll);
+            tvPage.setText(str);
+        }
     }
 
     private void setSaveImageListener(SaveImageListener saveImageListener) {
+        if (saveImageListener != null)
+            btSave.setVisibility(VISIBLE);
         this.saveImageListener = saveImageListener;
     }
 
