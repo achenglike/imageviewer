@@ -44,7 +44,7 @@ new ImageViewer.Builder(MainActivity.this, urls)
 	.setImageChangeListener(new ImageViewer.OnImageChangeListener() {
 	    @Override
 	    public void onImageChange(int position) {
-	        overlayView.setPages(position, urls.size());
+	    
 	    }
 	})
 	.show();
