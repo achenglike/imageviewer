@@ -1,5 +1,5 @@
 # imageviewer
-图片浏览库，基本完全参考https://github.com/stfalcon-studio/FrescoImageViewer ,只是因为这个库使用了fresco，才稍微改造了下。解除了对图片库的依赖
+图片浏览库，基本完全参考(说拷贝更合适)https://github.com/stfalcon-studio/FrescoImageViewer ,只是因为这个库使用了fresco，才稍微改造了下。解除了对图片库的依赖
 
 
 
