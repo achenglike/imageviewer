@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textColor="#ffffffff"
+        android:textSize="14sp"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/bt_save"
+        android:text="@string/button_save"
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:textColor="#ffffffff"
+        android:textSize="14sp"
+        android:padding="10dp"/>
+</merge>
