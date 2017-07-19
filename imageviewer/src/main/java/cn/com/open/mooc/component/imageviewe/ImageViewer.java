@@ -76,6 +76,7 @@ public class ImageViewer implements OnDismissListener, DialogInterface.OnKeyList
                 .setView(viewer)
                 .setOnKeyListener(this)
                 .create();
+        dialog.getWindow().setWindowAnimations(R.style.imageviewer_animation_style);
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {

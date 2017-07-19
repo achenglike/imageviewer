@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- dialog动画 -->
+    <style name="imageviewer_animation_style" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/imageviewer_in</item>
+    </style>
+</resources>
