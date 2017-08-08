@@ -22,7 +22,7 @@ allprojects {
 需要使用此库的moudle下 `build.gradle`
 ```gradle
 dependencies {
-    compile 'com.github.achenglike:imageviewer:1.0'
+    compile 'com.github.achenglike:imageviewer:x.x'
 }
 ```
 
