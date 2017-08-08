@@ -59,7 +59,7 @@ public class ImageViewAdapter extends RecyclingPagerAdapter<ImageViewAdapter.Ima
     boolean isScaled(int index) {
         for (ImageViewHolder holder : holders) {
             if (holder.position == index) {
-                return holder.isScaled;
+                return holder.isScaled();
             }
         }
         return false;
@@ -83,7 +83,6 @@ public class ImageViewAdapter extends RecyclingPagerAdapter<ImageViewAdapter.Ima
 
         private int position = -1;
         private PhotoView photoView;
-        private boolean isScaled;
 
         ImageViewHolder(View itemView) {
             super(itemView);
@@ -102,9 +101,12 @@ public class ImageViewAdapter extends RecyclingPagerAdapter<ImageViewAdapter.Ima
             photoView.setOnScaleChangeListener(this);
         }
 
+        private boolean isScaled() {
+            return photoView.getScale() > 1.0f;
+        }
+
         @Override
         public void onScaleChange(float scaleFactor, float focusX, float focusY) {
-            isScaled = photoView.getScale() > 1.0f;
         }
 
         void resetScale() {
