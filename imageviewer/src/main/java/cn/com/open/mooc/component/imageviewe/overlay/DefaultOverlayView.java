@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.Locale;
 
 import cn.com.open.mooc.component.imageviewe.R;
+import cn.com.open.mooc.component.imageviewe.progress.CircleProgressView;
 
 
 /**
@@ -22,7 +23,7 @@ import cn.com.open.mooc.component.imageviewe.R;
 public class DefaultOverlayView extends RelativeLayout {
     TextView tvPage;
     Button btSave;
-
+    CircleProgressView circleProgressView;
     int currentPage;
     SaveImageListener saveImageListener;
 
@@ -41,10 +42,15 @@ public class DefaultOverlayView extends RelativeLayout {
         init();
     }
 
+    public void setCurrentProgress(int progress){
+        circleProgressView.setProgress(progress);
+        circleProgressView.setVisibility(progress >=100? View.GONE : View.VISIBLE);
+    }
     private void init() {
         View view = inflate(getContext(), R.layout.overlay_default_layout, this);
         tvPage = (TextView) view.findViewById(R.id.tv_page);
         btSave = (Button) view.findViewById(R.id.bt_save);
+        circleProgressView = (CircleProgressView) view.findViewById(R.id.circle_progress_view);
         btSave.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
