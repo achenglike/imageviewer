@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ImageViewe</string>
     <string name="button_save">保存</string>
+
+    <color name="transparent90_white">#E5ffffff</color>
+    <color name="transparent">#00000000</color>
+
 </resources>
