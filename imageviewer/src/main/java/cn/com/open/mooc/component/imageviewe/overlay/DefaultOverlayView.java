@@ -42,10 +42,10 @@ public class DefaultOverlayView extends RelativeLayout {
         init();
     }
 
-    public void setCurrentProgress(int progress){
-        circleProgressView.setProgress(progress);
-        circleProgressView.setVisibility(progress >=100? View.GONE : View.VISIBLE);
+    public CircleProgressView getCircleProgressView() {
+        return circleProgressView;
     }
+
     private void init() {
         View view = inflate(getContext(), R.layout.overlay_default_layout, this);
         tvPage = (TextView) view.findViewById(R.id.tv_page);
