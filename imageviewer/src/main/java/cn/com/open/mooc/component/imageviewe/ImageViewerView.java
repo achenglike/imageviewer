@@ -29,6 +29,7 @@ import android.widget.RelativeLayout;
 
 
 import cn.com.open.mooc.component.imageviewe.ImageLoader.ImageLoader;
+import cn.com.open.mooc.component.imageviewe.overlay.DefaultOverlayView;
 
 /*
  * Created by Alexander Krol (troy379) on 29.08.16.
@@ -250,6 +251,10 @@ class ImageViewerView extends RelativeLayout
 
     private void onClick(MotionEvent event, boolean isOverlayWasClicked) {
         if (overlayView != null && !isOverlayWasClicked) {
+
+            if (overlayView instanceof DefaultOverlayView && ((DefaultOverlayView)overlayView).getCircleProgressView().getProgress() != 100)
+                return;
+
             AnimationUtils.animateVisibility(overlayView);
             super.dispatchTouchEvent(event);
         }
